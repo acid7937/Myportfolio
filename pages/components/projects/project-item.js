@@ -1,16 +1,18 @@
 import Image from "next/legacy/image";
 
+export default function ProjectItem({ data }) {
+  if (!data || !data.properties) {
+    return null;
+  }
 
-export default function ProjectItem({data}){
-
-    const title = data.properties.Projects.title[0].plain_text
-    const description = data.properties.Description.rich_text[0].plain_text
-    const github = data.properties.Github.url
-    const blog = data.properties.Blog.url
-    const imageSrc = data.cover.file?.url || data.cover.external.url
-    const tags = data.properties.TechStack.multi_select
-    const start = data.properties.WorkPeriod.date.start
-    const end = data.properties.WorkPeriod.date.end
+  const title = data.properties.Projects?.title?.[0]?.plain_text || "";
+  const description = data.properties.Description?.rich_text?.[0]?.plain_text || "";
+  const github = data.properties.Github?.url || "";
+  const blog = data.properties.Blog?.url || "";
+  const imageSrc = data.cover?.file?.url || data.cover?.external?.url || "";
+  const tags = data.properties.TechStack?.multi_select || [];
+  const start = data.properties.WorkPeriod?.date?.start || "";
+  const end = data.properties.WorkPeriod?.date?.end || "";
 
     const calculatedPeriod = (start, end) => {
         const startDateStringArray = start.split('-');
