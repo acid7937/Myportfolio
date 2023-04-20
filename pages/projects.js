@@ -70,6 +70,7 @@ export async function getStaticProps() {
         console.log(`projectsNames : ${projectsNames}`);
 
     return {
-      props: {projects}, // will be passed to the page component as props
+      props: {projects},
+      revalidate: 1 // will be passed to the page component as props
     }
   }
