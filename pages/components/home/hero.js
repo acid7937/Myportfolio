@@ -14,7 +14,7 @@ export default function Hero(){
         <br className="hidden lg:inline-block"/>고한성 입니다.
       </h1>
       <p className="mb-8 leading-relaxed">
-        코드스테이츠 백엔드 42기를 수료하였습니다.<br></br> 현재 보시고 계신 프론트 화면은 NEXT.JS를 사용하여 구현하였습니다.</p>
+        코드스테이츠 백엔드 42기를 수료하였습니다.<br></br> Spring boot, JPA를 기반으로 학습하였습니다. </p>
       <div className="flex justify-center">
         
         <Link href="/projects" 
