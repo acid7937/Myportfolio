@@ -1,9 +1,26 @@
 import Link from 'next/link'
 import DarkModeToggleButton from './dark-mode-toggle.button';
+import Head from 'next/head';
 
 export default function Header(){
     return(
         <>
+
+<Head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDSG7YS2E5"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', 'G-TDSG7YS2E5');
+                        `,
+                    }}
+                />
+            </Head>
+
         <header className="text-gray-600 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     
@@ -70,6 +87,8 @@ export default function Header(){
  
 
   </Link>
+
+  
     
 
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
